@@ -17,7 +17,7 @@ Objetivos:
 
 Un sistema de control de versiones (VCS) es un programa o conunto de programas que rastrea los cambios en una colección de archivos. Uno de sus objetivos es recuperar fácilmente versiones anteriores de archivos individuales o de todo el proyecto. Otro de sus objetivos es permitir que varios miembros del equipo trabajen sin afectar el trabajo de los demás.
 
-VCS tambien se lo conoce como SCM (Source Code Management) ambos terminos se suelen utilizar indistintamente. Un VCS se puede utilizar para proyectos fuera del software, como documentos, libros o tutoriales en línea.
+VCS tambien se lo conoce como SCM (Source Configuration Management) ambos terminos se suelen utilizar indistintamente. Un VCS se puede utilizar para proyectos fuera del software, como documentos, libros o tutoriales en línea.
 
 Con un VCS puedes:
 - Ver todos los cambios realizados en su proyecto, cuándo se realizaron los cambios y quién los realizó.
@@ -79,7 +79,7 @@ Algunas de sus funcionalidades son:
 
 Se asume que ya tienes git instalado en tu sistema.
 
-[Git](https://git-scm.com/downloads)
+[Descargar Git](https://git-scm.com/downloads)
 
 Para configurar git, se debe ejecutar los siguientes comandos:
 
@@ -160,3 +160,80 @@ git commit -m "Mi primer commit"
 ```
 
 Ya con todo este seguimiento, git reconoce el directorio "my-repository" como un repositorio y además que tiene un commit "Mi primer commit" con su hash SHA-1.
+
+### Ver las diferencias
+
+Para visualizar los cambios que se han realizado en el archivo README.md, debemos ejecutar el siguiente comando:
+
+```bash
+git diff README.md
+```
+
+### Corrigiendo un commit
+
+Es posible que haya situaciones que crees un commit y te des cuenta tarde que algo quedó mal en algún archivo, no desesperes, hay solución, realiza la corrección, guarda y ejecuta lo siguiente:
+
+```bash
+git commit --amend --no-edit
+```
+
+Esto editara el último commit ahorrandote el trabajo de crear uno nuevo o peor, teniendo que eliminar el anterior y creandolo nuevamente.
+
+### Ver los hash y nombres de los commits
+
+Si fuiste creando muchos commits y deseas ver cuantos hay en tu local actualmente, puedes ejecutar el siguiente comando:
+
+```bash
+git log --oneline
+```
+
+Esto nos muestra los hash y nombres de los commits en una sola linea, desde el más nuevo al más viejo.
+
+### Eliminé un archivo ¿Qué hago?
+
+Si estabas trabajando y eliminaste por error un archivo, puedes ejecutar el siguiente comando:
+
+```bash
+git checkout -- README.md
+```
+
+Esto restaurara el archivo README.md a su estado anterior.
+
+### Volviendo a un commit anterior
+
+Sin pensar en causas específicas, habrá momentos que quieras volver a un commit anterior, para ello puedes ejecutar el siguiente comando:
+
+```bash
+git reset --hard HEAD^
+```
+
+### Revierte un commit
+
+Es posible que quieras sacar los cambios del último commit pero sin perder lo que se hizo, esto puede pasar porque momentaneamente no quieres tenerlo, pero en un futuro puedes volver a usarlo, para ello puedes ejecutar el siguiente comando:
+
+```bash   
+git revert --hard HEAD
+```
+
+Para ser precisos esto lo que hará es crear un nuevo commit pero eliminando los cambios del último commit.
+
+### Navegando entre commits
+
+Una carácteristica muy potente de git es la capacidad de volver a cambios anteriores y trabajar desde ahí, para ello puedes ejecutar el siguiente comando:
+
+```bash
+git checkout <hash-commit>
+```
+
+### Archivo .gitignore
+
+Un archivo .gitignore es un archivo que contiene una lista de archivos y directorios que Git debe ignorar. Por ejemplo, si tienes un archivo .env que contiene información sensible, puedes agregarlo al archivo .gitignore para que Git no lo incluya en el repositorio.
+
+
+### Archivo .gitkeep
+
+Git no rastrea archivos vacios, generamente esto es conveniente, pero si deseamos mantener ciertas carpetas para determinas una futura estructura, podemos crear un archivo .gitkeep dentro de los directorios para que git los rastree.
+
+## Cheat Sheet
+
+<embed src="/git-cheat-sheet-education.pdf" type="application/pdf" width="100%" height="600px" />
