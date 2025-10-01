@@ -93,6 +93,8 @@ git config --global user.email "tu.email@gmail.com"
 
 Con esto git sabrá quien está realizando los cambios en los archivos.
 
+## Crear un repositorio
+
 Creemos un folder vacío para inicializar GIT y tener nuestro primer repositorio
 
 ```bash
@@ -107,12 +109,21 @@ cd my-repository
 git init
 ```
 
+El git init puede ejecutarlo en cualquier directorio que quiera convertir en un repositorio, puede utilizarlo tanto en un directorio ya existente o crear uno nuevo como ejemplificamos.
+
+## Trabajando con GIT
+
+<br />
+
+### Crear un archivo
 
 Creemos un archivo para tener cambios en el repo
 
 ```bash
 touch README.md
 ```
+
+### Verificar los cambios
 
 Con esto podemos ejecutar el siguiente comando:
 
@@ -123,6 +134,8 @@ git status
 Que nos muestra los archivos que han sido modificados/creados, en este caso el archivo README.md
 
 Tambien notará que la terminal le dira: Untracked files. Esto significa que no se realizará un seguimiento independiente de si se realizan más cambios o no en él.
+
+### Rastrear los cambios
 
 Para empezar a rastrear los cambios en el archivo README.md, debemos ejecutar el siguiente comando:
 
@@ -137,6 +150,8 @@ git add .
 ```
 
 Si volvemos a ejecutar git status, veremos que ahora antes del README.MD dira *Changes to be committed:*. Esto significa que los archivos estan listos para ser *commiteados*.
+
+### Commitear los cambios
 
 Ahora que los archivos estan listos para ser commiteados, debemos ejecutar el siguiente comando:
 
