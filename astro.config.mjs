@@ -8,7 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'Mis resumenes',
 			favicon: '/favicon.png',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/GountzJs/web-resumenes', }],
 			sidebar: [
 				{
 					label: 'Empieza aquí',
