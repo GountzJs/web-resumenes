@@ -232,7 +232,7 @@ Un archivo .gitignore es un archivo que contiene una lista de archivos y directo
 
 ### Archivo .gitkeep
 
-Git no rastrea archivos vacios, generamente esto es conveniente, pero si deseamos mantener ciertas carpetas para determinas una futura estructura, podemos crear un archivo .gitkeep dentro de los directorios para que git los rastree.
+Git no rastrea archivos vacios, generamente esto es conveniente, pero si deseamos mantener ciertas carpetas para determinar estructuras, podemos crear un archivo .gitkeep dentro de los directorios para que git los rastree.
 
 ## Cheat Sheet
 
